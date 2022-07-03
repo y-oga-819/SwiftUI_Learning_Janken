@@ -14,32 +14,31 @@ struct ContentView: View {
         VStack {
             Spacer()
 
-            if answerNumber == 0 {
-                Text("これからジャンケンをします")
-                    .padding(.bottom)
-            } else if answerNumber == 1 {
+            switch answerNumber {
+            case 1:
                 Image("gu")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Spacer()
                 Text("ぐー")
                     .padding(.bottom)
-            } else if answerNumber == 2 {
+            case 2:
                 Image("choki")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Spacer()
                 Text("ちょき")
                     .padding(.bottom)
-            } else if answerNumber == 3 {
+            case 3:
                 Image("pa")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Spacer()
                 Text("( ᐛ👐)パァ")
                     .padding(.bottom)
-            } else {
-                
+            default:
+                Text("これからジャンケンをします")
+                    .padding(.bottom)
             }
 
             Button(action: {
