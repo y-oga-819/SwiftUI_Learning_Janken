@@ -31,7 +31,7 @@ struct JankenHand: View {
 }
 
 struct ContentView: View {
-    @State var answerNumber:Int = 0
+    @State var answerNumber: Int = 0
 
     var body: some View {
         VStack {
