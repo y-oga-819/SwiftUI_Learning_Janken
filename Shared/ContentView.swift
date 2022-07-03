@@ -30,26 +30,11 @@ struct ContentView: View {
 
             switch answerNumber {
             case 1:
-                Image("gu")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                Spacer()
-                Text("ぐー")
-                    .padding(.bottom)
+                JankenHand(imageName: "gu", handText: "ぐー")
             case 2:
-                Image("choki")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                Spacer()
-                Text("ちょき")
-                    .padding(.bottom)
+                JankenHand(imageName: "choki", handText: "チョキ")
             case 3:
-                Image("pa")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                Spacer()
-                Text("( ᐛ👐)パァ")
-                    .padding(.bottom)
+                JankenHand(imageName: "pa", handText: "( ᐛ👐)パァ")
             default:
                 Text("これからジャンケンをします")
                     .padding(.bottom)
