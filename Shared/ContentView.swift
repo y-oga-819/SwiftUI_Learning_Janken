@@ -10,9 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            Spacer()
+
             Image("gu")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+            Spacer()
+
             Text("ぐー")
             Button(action: {
                 print("タップされたよ！")
