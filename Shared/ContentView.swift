@@ -24,12 +24,19 @@ struct ContentView: View {
                 Spacer()
                 Text("ぐー")
                     .padding(.bottom)
-            } else {
+            } else if answerNumber == 2{
                 Image("choki")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Spacer()
                 Text("ちょき")
+                    .padding(.bottom)
+            } else {
+                Image("pa")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                Spacer()
+                Text("( ᐛ👐)パァ")
                     .padding(.bottom)
             }
 
