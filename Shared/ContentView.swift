@@ -17,12 +17,19 @@ struct ContentView: View {
             if answerNumber == 0 {
                 Text("これからジャンケンをします")
                     .padding(.bottom)
-            } else {
+            } else if answerNumber == 1{
                 Image("gu")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Spacer()
                 Text("ぐー")
+                    .padding(.bottom)
+            } else {
+                Image("choki")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                Spacer()
+                Text("ちょき")
                     .padding(.bottom)
             }
 
