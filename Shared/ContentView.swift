@@ -7,10 +7,19 @@
 
 import SwiftUI
 
-struct JankenHand: View {
+struct Hand {
     var imageName: String
     var handText: String
 
+    init(imageName: String, handText: String) {
+        self.imageName = imageName
+        self.handText = handText
+    }
+}
+
+struct JankenHand: View {
+    var imageName: String
+    var handText: String
     var body: some View {
         Image(imageName)
             .resizable()
