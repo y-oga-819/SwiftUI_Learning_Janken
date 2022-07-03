@@ -18,6 +18,11 @@ struct ContentView: View {
                 print("タップされたよ！")
             }) {
                 Text("じゃんけんをする！")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 100)
+                    .font(.title)
+                    .background(Color.pink)
+                    .foregroundColor(Color.white)
             }
         }
     }
