@@ -18,14 +18,14 @@ struct Hand {
 }
 
 struct JankenHand: View {
-    var imageName: String
-    var handText: String
+    var hand: Hand
+
     var body: some View {
-        Image(imageName)
+        Image(hand.imageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
         Spacer()
-        Text(handText)
+        Text(hand.handText)
             .padding(.bottom)
     }
 }
@@ -39,11 +39,14 @@ struct ContentView: View {
 
             switch answerNumber {
             case 1:
-                JankenHand(imageName: "gu", handText: "ぐー")
+                let hand: Hand = Hand.init(imageName: "gu", handText: "ぐー")
+                JankenHand(hand: hand)
             case 2:
-                JankenHand(imageName: "choki", handText: "チョキ")
+                let hand: Hand = Hand.init(imageName: "choki", handText: "チョキ")
+                JankenHand(hand: hand)
             case 3:
-                JankenHand(imageName: "pa", handText: "( ᐛ👐)パァ")
+                let hand: Hand = Hand.init(imageName: "pa", handText: "( ᐛ👐)パァ")
+                JankenHand(hand: hand)
             default:
                 Text("これからジャンケンをします")
                     .padding(.bottom)
