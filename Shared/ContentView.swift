@@ -30,6 +30,20 @@ struct JankenHand: View {
     }
 }
 
+func determineHand(answerNumber: Int) -> Hand {
+    let hand: Hand
+
+    switch answerNumber {
+    case 1:
+        hand = Hand.init(imageName: "gu", handText: "ぐー")
+    case 2:
+        hand = Hand.init(imageName: "choki", handText: "チョキ")
+    default:
+        hand = Hand.init(imageName: "pa", handText: "( ᐛ👐)パァ")
+    }
+    return hand
+}
+
 struct ContentView: View {
     @State var answerNumber: Int = 0
 
@@ -37,19 +51,12 @@ struct ContentView: View {
         VStack {
             Spacer()
 
-            switch answerNumber {
-            case 1:
-                let hand: Hand = Hand.init(imageName: "gu", handText: "ぐー")
-                JankenHand(hand: hand)
-            case 2:
-                let hand: Hand = Hand.init(imageName: "choki", handText: "チョキ")
-                JankenHand(hand: hand)
-            case 3:
-                let hand: Hand = Hand.init(imageName: "pa", handText: "( ᐛ👐)パァ")
-                JankenHand(hand: hand)
-            default:
+            if answerNumber == 0 {
                 Text("これからジャンケンをします")
                     .padding(.bottom)
+            } else {
+                let hand = determineHand(answerNumber: answerNumber)
+                JankenHand(hand: hand)
             }
 
             Button(action: {
