@@ -46,7 +46,6 @@ struct ContentView: View {
                 repeat {
                     newAnswerNumber = Int.random(in: 1...3)
                     
-                    
                 } while answerNumber == newAnswerNumber
 
                 answerNumber = newAnswerNumber
