@@ -11,6 +11,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Image("gu")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
             Text("ぐー")
             Button(action: {
                 print("タップされたよ！")
