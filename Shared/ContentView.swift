@@ -25,7 +25,7 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 100)
                     .font(.title)
-                    .background(Color.pink)
+                    .background(Color.pink.edgesIgnoringSafeArea([]))
                     .foregroundColor(Color.white)
             }
         }
