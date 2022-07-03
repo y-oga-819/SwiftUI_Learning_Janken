@@ -17,32 +17,34 @@ struct ContentView: View {
             if answerNumber == 0 {
                 Text("これからジャンケンをします")
                     .padding(.bottom)
-            } else if answerNumber == 1{
+            } else if answerNumber == 1 {
                 Image("gu")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Spacer()
                 Text("ぐー")
                     .padding(.bottom)
-            } else if answerNumber == 2{
+            } else if answerNumber == 2 {
                 Image("choki")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Spacer()
                 Text("ちょき")
                     .padding(.bottom)
-            } else {
+            } else if answerNumber == 3 {
                 Image("pa")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Spacer()
                 Text("( ᐛ👐)パァ")
                     .padding(.bottom)
+            } else {
+                
             }
 
             Button(action: {
                 print("タップされたよ！")
-                answerNumber += 1
+                answerNumber = Int.random(in: 1...3)
             }) {
                 Text("じゃんけんをする！")
                     .frame(maxWidth: .infinity)
