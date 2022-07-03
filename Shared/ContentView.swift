@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct JankenHand: View {
+    var imageName: String
+    var handText: String
+
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+        Spacer()
+        Text(handText)
+            .padding(.bottom)
+    }
+}
+
 struct ContentView: View {
     @State var answerNumber:Int = 0
 
