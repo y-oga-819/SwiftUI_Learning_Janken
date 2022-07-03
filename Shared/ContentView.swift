@@ -8,19 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var answerNumber:Int = 0
+
     var body: some View {
         VStack {
             Spacer()
 
-            Image("gu")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            Spacer()
+            if answerNumber == 0 {
+                Text("これからジャンケンをします")
+                    .padding(.bottom)
+            } else {
+                Image("gu")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                Spacer()
+                Text("ぐー")
+                    .padding(.bottom)
+            }
 
-            Text("ぐー")
-                .padding(.bottom)
             Button(action: {
                 print("タップされたよ！")
+                answerNumber += 1
             }) {
                 Text("じゃんけんをする！")
                     .frame(maxWidth: .infinity)
